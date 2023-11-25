@@ -1,0 +1,194 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+<div class="container-fluid">
+    <div class="row">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+                <li data-target="#demo" data-slide-to="4"></li>
+            </ul>
+
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="carousel-img" src="~/Content/Images/Home/Slider/thailand.png" alt="ThaiLand">
+                </div>
+                <div class="carousel-item">
+                    <img class="carousel-img" src="~/Content/Images/Home/Slider/japan.png" alt="Japan">
+                </div>
+                <div class="carousel-item">
+                    <img class="carousel-img" src="~/Content/Images/Home/Slider/france.png" alt="France">
+                </div>
+                <div class="carousel-item">
+                    <img class="carousel-img" src="~/Content/Images/Home/Slider/italy.png" alt="Italy">
+                </div>
+                <div class="carousel-item">
+                    <img class="carousel-img" src="~/Content/Images/Home/Slider/hanoi.png" alt="Ha Noi">
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <p class="autumn-title">New Travel</p>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in Model.Tour)
+        {
+            <div class="col-md-4">
+                <div class="item-travel">
+                    <img src="@item.Img" class="img-tour" />
+                    <h6 class="childtitle-tour">@item.Tour_trending</h6>
+                    <h6 class="have-tour mt-2">@item.Total Tours</h6>
+                    <span class="timeline-tour"><h6 class="time-line">@item.Time</h6></span>
+                    <a href="" class="link-detailtour"><p class="title-nametour">@item.Descrip</p></a>
+                    <a href="" class="btn btn-primary btn-buy">Buy</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-md-6">
+            <a href="" class="thumnailtet-href"><img src="~/Content/Images/Home/thumnailtet.png" class="thumnailtet-content" /></a>
+        </div>
+        <div class="col-md-6">
+            <a href="" class="thumnaildiscount-href"><img src="~/Content/Images/Home/thumnaildiscount.png" class="thumnailtet-content" /></a>
+        </div>
+    </div>
+</div>
+<div class="parallax">
+    <div class="content-boxlax">
+        <div class="content-header">
+            <p class="headercontent-content">PIONEER EDITHTOURIST TRAVEL TO DEPLOY 2024 TET TOURS EARLIER</p>
+            <p class="navcontent-content">Edithtourist Travel has pioneered the earliest deployment of attractive and rich domestic and foreign tour programs to celebrate the Lunar New Year - Giap Thin 2024 with incentives to buy tours early, in groups.</p>
+            <a href="" class="btn btn-primary btn-seemore">See more</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="hot-tour mt-4 mb-4">Location Trending</p>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in Model.Trending)
+        {
+            <div class="col-md-4 mt-4 mb-4">
+                <div class="box-trending">
+                    <img src="@item.Image" class="box-img-trending" />
+                    <div class="overlay">
+                        <div class="text">@item.Nametrend</div>
+                    </div>
+                    <p class="box-have-trending mt-3">There are @item.Total_tour Tours</p>
+                    <a href="" class="box-newpost-trending">New Posts</a>
+                    <p class="box-content-trending"><a href="" class="box-contenthref-trending">@item.Description</a></p>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <div class="box-standard">
+                <div class="row">
+                    <div class="col-md-4">
+                        <i class="fa fa-line-chart icon-standard" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="title-standard mt-3">Good price</p>
+                        <p class="content-standard">Attractive incentives and gifts when purchasing tours online</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="box-standard">
+                <div class="row">
+                    <div class="col-md-4">
+                        <i class="fa fa-shopping-cart icon-standard" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="title-standard mt-3">Safe payment</p>
+                        <p class="content-standard">Secured the international organization Global Sign</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="box-standard">
+                <div class="row">
+                    <div class="col-md-4">
+                        <i class="fa fa-headphones icon-standard" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="title-standard mt-3">Consultation</p>
+                        <p class="content-standard">Free online consulting support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="box-standard">
+                <div class="row">
+                    <div class="col-md-4">
+                        <i class="fa fa-star icon-standard" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <p class="title-standard mt-3">Reputation</p>
+                        <p class="content-standard">Leading travel brand in Vietnam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="title-location mt-5 mb-5">SOME FAMOUS LOCATIONS</p>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (var item in Model.Locations)
+        {
+            <div class="col-md-4 mt-4 mb-4">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="@item.img" alt="@item.name" class="img-location">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1 class="name-location">@item.name</h1>
+                            <p>@item.locator</p>
+                            <p>@item.at</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
